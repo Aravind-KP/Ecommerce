@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Listing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Our Products 🛍️</h1>
+    </header>
+
+    <main>
+        <aside class="filters">
+            <h2>Filters</h2>
+            
+            <div class="filter-group">
+                <h3>Category</h3>
+                <div id="category-filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="Electronics">Electronics</button>
+                    <button class="filter-btn" data-category="Clothing">Clothing</button>
+                    <button class="filter-btn" data-category="Footwear">Footwear</button>
+                    <button class="filter-btn" data-category="Accessories">Accessories</button>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3>Price Range</h3>
+                <input type="range" id="price-filter" min="0" max="1500" value="1500">
+                <p>Max Price: $<span id="price-value">1500</span></p>
+            </div>
+        </aside>
+
+        <section id="product-listing" class="product-grid">
+            </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
