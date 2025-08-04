@@ -1,0 +1,64 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const productListing = document.getElementById('product-listing');
+    const categoryFilters = document.getElementById('category-filters');
+    const priceFilter = document.getElementById('price-filter');
+    const priceValue = document.getElementById('price-value');
+
+    let currentCategory = 'all';
+    let maxPrice = 1500;
+
+    // Function to display products
+    function displayProducts(filteredProducts) {
+        productListing.innerHTML = ''; // Clear existing products
+        filteredProducts.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <p class="product-price">$${product.price}</p>
+                </div>
+            `;
+            productListing.appendChild(productCard);
+        });
+    }
+
+    // Function to filter products based on all criteria
+    function filterAndDisplayProducts() {
+        let filteredProducts = products;
+
+        // Filter by category
+        if (currentCategory !== 'all') {
+            filteredProducts = filteredProducts.filter(product => product.category === currentCategory);
+        }
+
+        // Filter by price
+        filteredProducts = filteredProducts.filter(product => product.price <= maxPrice);
+        
+        displayProducts(filteredProducts);
+    }
+    
+    // Event listener for category buttons
+    categoryFilters.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+            // Remove active class from all buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            // Add active class to the clicked button
+            e.target.classList.add('active');
+
+            currentCategory = e.target.dataset.category;
+            filterAndDisplayProducts();
+        }
+    });
+
+    // Event listener for price slider
+    priceFilter.addEventListener('input', (e) => {
+        maxPrice = parseInt(e.target.value);
+        priceValue.textContent = maxPrice;
+        filterAndDisplayProducts();
+    });
+
+    // Initial display of all products
+    filterAndDisplayProducts();
+});
