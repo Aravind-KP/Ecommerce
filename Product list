@@ -1,0 +1,12 @@
+// Sample Product Data
+const products = [
+    { id: 1, name: 'Scented Candle', price: 18, category: 'Home Goods', image: 'https://via.placeholder.com/250?text=Candle' },
+    { id: 2, name: 'Plush Throw Blanket', price: 45, category: 'Home Goods', image: 'https://via.placeholder.com/250?text=Blanket' },
+    { id: 3, name: 'Ceramic Mug', price: 12, category: 'Home Goods', image: 'https://via.placeholder.com/250?text=Mug' },
+    { id: 4, name: 'The Silent Patient', price: 15, category: 'Books', image: 'https://via.placeholder.com/250?text=Book' },
+    { id: 5, name: 'Atomic Habits', price: 20, category: 'Books', image: 'https://via.placeholder.com/250?text=Book' },
+    { id: 6, name: 'Organic Avocados (4-pack)', price: 6, category: 'Groceries', image: 'https://via.placeholder.com/250?text=Avocados' },
+    { id: 7, name: 'Artisanal Sourdough', price: 8, category: 'Groceries', image: 'https://via.placeholder.com/250?text=Bread' },
+    { id: 8, name: 'LEGO Classic Set', price: 35, category: 'Toys', image: 'https://via.placeholder.com/250?text=LEGO' },
+    { id: 9, name: 'Jigsaw Puzzle (1000pc)', price: 22, category: 'Toys', image: 'https://via.placeholder.com/250?text=Puzzle' },
+];
